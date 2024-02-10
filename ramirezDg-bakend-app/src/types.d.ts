@@ -1,30 +1,27 @@
-// types.d.ts
-export type ExperienciaType = 'Laboral' | 'Academica' | 'Independiente'
-export type FechaFin = number | 'Actualmente'
-export interface EducacionItem {
-    titulo: string;
-    fechaDeInicio: string;
-    fechaDeFin: FechaFin;
-    institucion: number;
-    ubicacion: string;
-  }
-  
-export interface ExperienciaItem {
-    tipo: ExperienciaType;
-    empresa: string;
-    puesto: string;
-    fechaDeInicio: number;
-    fechaDeFin: FechaFin;
-    descripcion: string;
-  }
-  
-  export interface InfoJson {
-    habilidades: string[];
-    educacion: EducacionItem[];
-    cursos: string[];
-    experiencia: ExperienciaItem[];
-  }
-  
-/*   declare const nuevoJson: NuevoJson;
-  export default nuevoJson; */
-  
+export type Habilidades = Pick<Data, habilidades>
+export type Cursos = Pick<Data, cursos>
+
+export interface Data {
+  habilidades: string[]
+  educacion: Educacion[]
+  cursos: string[]
+  experiencia: Experiencia[]
+}
+
+export interface Educacion {
+  titulo: string
+  fechaDeInicio: number
+  fechaDeFin: number | string
+  institucion: string
+  ubicacion: string
+}
+
+export interface Experiencia {
+  tipo: string
+  empresa: string
+  puesto: string
+  fechaDeInicio: number
+  fechaDeFin: number
+  descripcion: string
+}
+
