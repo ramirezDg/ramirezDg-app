@@ -24,4 +24,3 @@ export interface Experiencia {
   fechaDeFin: number
   descripcion: string
 }
-
