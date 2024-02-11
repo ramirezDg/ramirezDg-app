@@ -1,15 +1,15 @@
 
-import { Ability, AbilityName, NewAbilityName } from '../types'
+import { Ability, AbilityName } from '../types';
 import infoDataJson from './ability.json'
 
 const info: Ability[] = infoDataJson as Ability[]
 /* Consulta Todo Ee Json */
 export const getInfo = (): Ability[] | undefined => info
 
-export const addInfo = (newAbilityName: NewAbilityName): Ability => {
+export const addInfo = (newAbilityName: string): Ability => {
   const newEntry = {
     id: Math.max(...info.map(d => d.id)) + 1,
-    ...newAbilityName
+    nameAbility: newAbilityName
   }
   info.push(newEntry)
 

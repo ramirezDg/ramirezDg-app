@@ -19,9 +19,9 @@ router.get('/:id', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  const {nameAbility} = req.body
-
-  const newNameAbility = data.addInfo({nameAbility})
+  const { nameAbility } = req.body
+  
+  const newNameAbility = data.addInfo(nameAbility)
 
   res.json(newNameAbility)
 })
