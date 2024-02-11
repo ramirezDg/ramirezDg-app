@@ -1,17 +1,36 @@
 
-import { Habilidad, HabilidadName } from '../types'
-import infoDataJson from './habilidades.json'
+import { Ability, AbilityName, NewAbilityName } from '../types'
+import infoDataJson from './ability.json'
 
-const info: Habilidad[] = infoDataJson as Habilidad[]
+const info: Ability[] = infoDataJson as Ability[]
+/* Consulta Todo Ee Json */
+export const getInfo = (): Ability[] | undefined => info
 
-export const getInfo = (): Habilidad[] | undefined => info
+export const addInfo = (newAbilityName: NewAbilityName): Ability => {
+  const newEntry = {
+    id: Math.max(...info.map(d => d.id)) + 1,
+    ...newAbilityName
+  }
+  info.push(newEntry)
 
-export const addInfo = (): undefined => undefined
+  return newEntry
+}
 
 /* Services */
-
-export const getHabilidadName = (): HabilidadName[]=> {
-  return info.map(({nombreDeHabilidad})=> {
-    return {nombreDeHabilidad}
+/* Lista de habilidades Solo Nombre */
+export const getAbilityName = (): AbilityName[] => {
+  return info.map((nameAbility ) => {
+    return nameAbility 
   })
+}
+
+/* Buscar por Id */
+
+export const finById_name = (id: number): AbilityName | undefined => {
+  const entry = info.find(d => d.id === id)
+  if (entry != null) {
+    const {id, ...restOfAbility } = entry
+    return restOfAbility
+  }
+  return undefined
 }

@@ -1,2 +1,3 @@
-export interface Habilidad { id: number, nombreDeHabilidad: string }
-export type HabilidadName = Pick<Habilidad, nombreDeHabilidad>
+export interface Ability { id: number, nameAbility: string }
+export type AbilityName = Pick<Ability, nameAbility>
+export type NewAbilityName = Omit<Ability, id>

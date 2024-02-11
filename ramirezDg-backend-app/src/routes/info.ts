@@ -8,11 +8,22 @@ router.get('/', (_req, res) => {
 })
 
 router.get('/', (_req, res) => {
-  res.send(data.getHabilidadName())
+  res.send(data.getAbilityName())
 })
 
-router.post('/', (_req, res) => {
-  res.send('Saving')
+router.get('/:id', (req, res) => {
+  const entry = data.finById_name(+req.params.id)
+  return (entry != null)
+    ? res.send(entry)
+    : res.sendStatus(404)
+})
+
+router.post('/', (req, res) => {
+  const {nameAbility} = req.body
+
+  const newNameAbility = data.addInfo({nameAbility})
+
+  res.json(newNameAbility)
 })
 
 export default router
