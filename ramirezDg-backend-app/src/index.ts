@@ -1,5 +1,6 @@
 import express from 'express'
 import infoRouter from './routes/info'
+import infoHabilidades from './routes/habilidades'
 
 const app = express()
 
@@ -13,6 +14,8 @@ app.get('/ping', (_req, res) => {
 })
 
 app.use('/api/info', infoRouter)
+app.use('/api/habilidades', infoHabilidades)
+
 
 app.listen(PORT, () => {
   console.log(`Server rinning on port ${PORT}`)

@@ -4,10 +4,6 @@ import * as data from '../services/infoServices'
 const router = express.Router()
 
 router.get('/', (_req, res) => {
-  res.send(data.getInfo())
-})
-
-router.get('/', (_req, res) => {
   res.send(data.getHabilidadName())
 })
 
