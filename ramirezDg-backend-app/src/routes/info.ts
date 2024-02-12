@@ -5,13 +5,17 @@ import { Ability } from '../types'
 
 const router = express.Router()
 
+/* GET list json */
+
 router.get('/', (_req, res) => {
   res.send(dataServices.getInfo())
 })
 
-router.get('/', (_req, res) => {
+/* router.get('/', (_req, res) => {
   res.send(dataServices.getAbilityName())
-})
+}) */
+
+/* GET for by ID */
 
 router.get('/:id', (req, res) => {
   const entry = dataServices.finById_name(+req.params.id)
@@ -20,10 +24,11 @@ router.get('/:id', (req, res) => {
     : res.sendStatus(404)
 })
 
+/* POST + PARSER */
+
 router.post('/', (req, res) => {
   try {
     const newAbilityEntry = toNewAbilityEntry(req.body)
-    /* const { nameAbility } = req.body */
 
     const newNameAbility: string = newAbilityEntry.abilityName
 
@@ -41,4 +46,7 @@ router.post('/', (req, res) => {
   }
 })
 
+/* UPDATE */
+
+/* DELETE */
 export default router

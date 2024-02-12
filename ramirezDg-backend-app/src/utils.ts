@@ -1,4 +1,5 @@
-import { NewAbilityName } from './types'
+import {NewAbilityName } from './types'
+/* import * as dataServices from './services/infoServices' */
 
 const parseAbilityName = (abilityName: any): string => {
   if (!isString(abilityName)) {
@@ -13,9 +14,12 @@ const isString = (string: string): boolean => {
 
 const toNewAbilityEntry = (object: any): NewAbilityName => {
   const newAbilityEntry: NewAbilityName = {
-    abilityName: parseAbilityName(object.abilityName)
+    abilityName: parseAbilityName(object.nameAbility)
   }
   return newAbilityEntry
 }
+
+/* UPDATE */
+
 
 export default toNewAbilityEntry
