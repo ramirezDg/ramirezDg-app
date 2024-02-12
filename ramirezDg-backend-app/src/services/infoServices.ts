@@ -1,5 +1,5 @@
 
-import { Ability, AbilityName } from '../types';
+import { Ability, AbilityName } from '../types'
 import infoDataJson from './ability.json'
 
 const info: Ability[] = infoDataJson as Ability[]
@@ -19,8 +19,8 @@ export const addInfo = (newAbilityName: string): Ability => {
 /* Services */
 /* Lista de habilidades Solo Nombre */
 export const getAbilityName = (): AbilityName[] => {
-  return info.map((nameAbility ) => {
-    return nameAbility 
+  return info.map((nameAbility) => {
+    return nameAbility
   })
 }
 
@@ -29,7 +29,7 @@ export const getAbilityName = (): AbilityName[] => {
 export const finById_name = (id: number): AbilityName | undefined => {
   const entry = info.find(d => d.id === id)
   if (entry != null) {
-    const {id, ...restOfAbility } = entry
+    const { id, ...restOfAbility } = entry
     return restOfAbility
   }
   return undefined
