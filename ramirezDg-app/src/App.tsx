@@ -1,13 +1,16 @@
 // import { useState } from 'react'
-
-import './App.css'
+import Navbar from './components/Navbar'
 
 function App() {
   /* const [data, setData] = useState(0) */
 
   return (
     <>
-      <h1>Hello</h1>
+      <main className='bg-neutral-100 px-10'>
+        <section className='min-h-screen'>
+          < Navbar />
+        </section>
+      </main>
     </>
   )
 }
