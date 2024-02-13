@@ -7,7 +7,7 @@ function Home() {
             <h2 className="text-4xl font-semibold uppercase text-neutral-900">Daniel Ramirez Gil</h2>
             <h3 className="text-xl text-neutral-500">Front-End Developer</h3>
             <div className="flex justify-center ">
-            <IoIosArrowDropdown className="text-4xl cursor-pointer"/>
+            <IoIosArrowDropdown className="animate-bounce text-4xl cursor-pointer mt-4"/>
             </div>
 
         </section>

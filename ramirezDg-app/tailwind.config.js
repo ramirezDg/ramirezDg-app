@@ -8,6 +8,9 @@ export default {
     extend: {
       fontFamily: {
         inter: ['Inter", sans-serif;']
+      },
+      screens: {
+        '2xl': '1680px'
       }
     },
   },
