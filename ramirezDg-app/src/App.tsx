@@ -1,7 +1,18 @@
+import Navbar from './components/Navbar'
+import Skilss from './components/Skills'
+import './index.css'
+import About from './pages/About'
+
 function App (): JSX.Element {
   return (
     <>
-    <h1 className="font-Roboto">Hello</h1>
+      <main className='bg-white px-10'>
+        <section className="min-h-screen">
+          <Navbar />
+          <About />
+          <Skilss />
+        </section>
+      </main>
     </>
   )
 }
