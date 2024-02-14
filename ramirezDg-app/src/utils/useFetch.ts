@@ -18,7 +18,7 @@ export function useFetch<T> (url: string): FetchResult<T> {
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`)
         }
-        const jsonData = await response.json()
+        const jsonData: Ability[] = await response.json()
         setData(jsonData)
       } catch (error) {
         setError(error.message || 'Error fetching data')
