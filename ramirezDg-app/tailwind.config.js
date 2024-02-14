@@ -7,10 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        inter: ['Inter", sans-serif;']
-      },
-      screens: {
-        '2xl': '1680px'
+        Roboto: ["Roboto", "sans-serif"]
       }
     },
   },
