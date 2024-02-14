@@ -1,5 +1,6 @@
 // PostList.tsx
 import React, { useEffect, useState } from 'react'
+import { IoIosClose } from 'react-icons/io'
 
 interface Skill {
   id: number
@@ -29,10 +30,13 @@ const Skills: React.FC = () => {
   return (
     <div className='h-screen'>
       <h2>Skills</h2>
-      <ul>
+      <ul className='flex text-center p-5'>
         {skills.map(skills => (
-          <li key={skills.id}>
-            <p>{skills.nameAbility}</p>
+          <li key={skills.id} >
+            <span className="inline-flex items-center rounded-md bg-teal-50 px-2 py-1 text-sm font-medium text-cyan-600 ring-1 ring-inset ring-blue-700/10 select-none">{skills.nameAbility}
+            <IoIosClose className='ml-2 cursor-pointer'/>
+            </span>
+
           </li>
         ))}
       </ul>
