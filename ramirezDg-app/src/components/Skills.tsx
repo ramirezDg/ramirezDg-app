@@ -1,16 +1,42 @@
-import { useState } from 'react'
+// PostList.tsx
+import React, { useEffect, useState } from 'react'
 
-const listSkills = [{ id: 1, nameAbility: 'Mesa de Soporte Técnico' }, { id: 2, nameAbility: 'Soporte A Usuarios' }, { id: 3, nameAbility: 'React' }, { id: 4, nameAbility: 'JavaScript' }, { id: 5, nameAbility: 'TypeScript' }, { id: 6, nameAbility: 'Figma' }, { id: 7, nameAbility: 'Java SE' }, { id: 8, nameAbility: 'Adobe Illustrator' }, { id: 9, nameAbility: 'Html' }, { id: 10, nameAbility: 'Css' }, { id: 11, nameAbility: 'Adobe Photoshop' }, { id: 12, nameAbility: 'Sass' }, { id: 13, nameAbility: 'Linux' }, { id: 14, nameAbility: 'Git' }]
+interface Skill {
+  id: number
+  nameAbility: string
+}
 
 const Skills: React.FC = () => {
-  const [skils] = useState(listSkills)
+  const [skills, setSkills] = useState<Skill[]>([])
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const response = await fetch('http://localhost:3000/api/info')
+        if (!response.ok) {
+          throw new Error('Error fetching skills')
+        }
+        const data = await response.json()
+        setSkills(data)
+      } catch (error) {
+        console.error('Error fetching skills:', error)
+      }
+    }
+
+    fetchPosts()
+  }, []) // La dependencia vacía asegura que se ejecute solo una vez al montar el componente
+
   return (
-    <section className='h-screen'>
-      <h3 className="text-3xl py-1">Skills</h3>
+    <div className='h-screen'>
+      <h2>Skills</h2>
       <ul>
-          <Skill skills={skills}/>
+        {skills.map(skills => (
+          <li key={skills.id}>
+            <p>{skills.nameAbility}</p>
+          </li>
+        ))}
       </ul>
-    </section>
+    </div>
   )
 }
 

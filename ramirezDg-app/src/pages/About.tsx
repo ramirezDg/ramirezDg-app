@@ -7,7 +7,7 @@ function About (): JSX.Element {
             <h2 className='text-5xl py-5 text-teal-600 font-medium'>Daniel Ramirez Gil</h2>
             <h3 className='text-2xl py-2'>Front-end developer.</h3>
             <p className='text-mb py-5 leading-8 text-gray-800'>Systems Engineering student with experience in multimedia design and front-end development. Seeks to expand skills, improving projects and conveying impactful ideas. Focuses on continuous learning, embracing challenges, and innovating. Aspires to specialize in web development, providing creative and efficient solutions for an exceptional user experience.</p>
-            <div className='text-5xl flex justify-center gap-16 text-gray-600'>
+            <div className='text-5xl cursor-pointer flex justify-center gap-16 text-gray-600'>
                 <AiFillInstagram />
                 <AiFillLinkedin />
                 <AiFillTwitterCircle />

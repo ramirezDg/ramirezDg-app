@@ -4,7 +4,7 @@ import infoDataJson from './ability.json'
 
 const info: Ability[] = infoDataJson as Ability[]
 /* Consulta Todo Ee Json */
-export const getInfo = (): Ability[] | undefined => info
+export const getInfo = (): Ability[] => info
 
 export const addInfo = (newAbilityName: string): Ability => {
   const newEntry = {
