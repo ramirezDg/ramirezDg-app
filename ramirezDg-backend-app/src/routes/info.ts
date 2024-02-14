@@ -46,7 +46,41 @@ router.post('/', (req, res) => {
   }
 })
 
-/* UPDATE */
+router.patch('/:id', (req, res) => {
+  console.log(req.body)
+  const { nameAbility } = req.body;
+  const id = +req.params.id;
+  
+  if (!id || !nameAbility) {
+    res.status(400).json({ error: 'id or name is missing' })
+  }
+
+  try {
+    const updatedAbility = dataServices.updateAbility(id, nameAbility)
+    res.json(updatedAbility)
+  } catch (error) {
+    console.log(error)
+    return;
+  }
+
+})
+
+router.delete('/:id', (req, res) => {
+  const id = +req.params.id;
+  if (!id) {
+    res.status(400).json({ error: 'id is missing' })
+  }
+
+  try {
+    dataServices.deleteAbility(id)
+    res.status(204).end()
+  } catch (error) {
+    console.log(error)
+    return;
+  }
+})
+
+
 
 /* DELETE */
 export default router
